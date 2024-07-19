@@ -1,0 +1,7 @@
+# f=open('mytext.txt',mode='r',encoding='utf-8)
+f=open('mytext.txt',mode='w')
+print("file name:",f.name)
+print("file mode:",f.mode)
+print("encoding is:", f.encoding)
+f.close()
+print("is file closed: ", f.closed)
