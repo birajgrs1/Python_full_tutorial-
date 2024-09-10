@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(196, 241, 241);
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a:hover {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+}

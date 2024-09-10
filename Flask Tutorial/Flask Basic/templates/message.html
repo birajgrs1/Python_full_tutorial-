@@ -5,9 +5,33 @@
     <title>Jinja Delimiters Demo</title>
 </head>
 <body>
+    {% block content %}
+    {% if name %}
+        <h1>Hello, Welcome {{ name }}.</h1>
+    {% endif %}
 
+    {% if value %}
+        <h2>The score is {{ value }}</h2>
+    {% endif %}
+
+    {% if result %}
+        <table border="1">
+            <tr>
+                <th>Technology</th>
+                <th>Score</th>
+            </tr>
+            {% for key, value in result.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+    {% endblock %}
 </body>
 </html>
+
 
 <!--
 Templating with Jinja2 in Flask::

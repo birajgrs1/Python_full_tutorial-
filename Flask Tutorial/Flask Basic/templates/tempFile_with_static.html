@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Using Static files and folders...</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<p>Hello, Everyone!</p>
+<hr>
+<a href="{{ url_for('page') }}">Go to next page</a>
+<br>
+<img src="{{ url_for('static', filename='img/image1.jfif') }}" alt="image not found" height="200px" width="200px">
+<br>
+<input type="button" onclick="sayHello()" value="Please Click!">
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
