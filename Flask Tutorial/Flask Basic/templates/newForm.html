@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+</head>
+<body>
+<form action="/formLogin" method="get">
+    {% if error %}
+    <p><strong>{{ error }}</strong></p>
+    {% endif %}
+    <hr>
+    <label>Name:</label>
+    <input type="text" name="uname" required>
+    <br>
+    <label>Password:</label>
+    <input type="password" name="pass" required>
+    <br>
+    <input type="submit" value="Login">
+    <hr>
+</form>
+</body>
+</html>
