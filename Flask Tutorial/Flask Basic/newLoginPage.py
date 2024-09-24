@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, redirect, url_for
+from flask import Flask, render_template, request, session, redirect, url_for, make_response
 
 app = Flask(__name__)
 app.secret_key = 'login'  #encrypted
@@ -13,8 +13,11 @@ def newLogin():
     password = request.form.get('password')
 
     if username == 'Biraj' and password == '2332':
-        session['email'] = username
-        return redirect(url_for('profile'))
+        response = make_response(render_template('success.html'))
+        return response
+        # session['email'] = username
+        # return redirect(url_for('profile'))
+
     else:
         msg = 'Invalid username or password'
         return render_template('login.html', msg=msg)
@@ -26,13 +29,17 @@ def logout():
 
 @app.route('/profile')
 def profile():
+    email = request.cookies.get('email')
+    response = make_response(render_template('profile.html', name= email))
+    return response
+    '''
     if 'email' in session:
         email = session['email']
         return render_template('profile.html', name=email)
     else:
         msg = 'Login first'
         return render_template('login.html', msg=msg)
-
+'''
 if __name__ == "__main__":
     app.run(debug=True)
 
