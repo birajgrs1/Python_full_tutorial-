@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Are you sure you want to delete {{ employee[1] }}?</h2>
+<form method="POST">
+    <button type="submit">Delete</button>
+    <a href="{{ url_for('employee_list') }}">Cancel</a>
+</form>
+{% endblock %}
